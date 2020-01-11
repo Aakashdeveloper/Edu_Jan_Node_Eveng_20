@@ -1,0 +1,94 @@
+https://nodejs.org/en/
+https://www.mongodb.com/what-is-mongodb
+https://code.visualstudio.com/
+https://github.com/
+https://github.com/Aakashdeveloper
+
+Redis
+Postgres
+Docker
+Nginx
+Aws
+
+-------
+dependency
+node_modules
+packages
+node lib
+
+--------------
+JSON
+<
+[
+    {
+        "name":"john",
+        "class":"node"
+    },
+    {
+        "name":"ammy",
+        "class":"ang",
+        "time":40
+    }
+]
+
+------------
+local packages
+
+global packages
+
+-------
+
+///////////////
+Step to createPackage.json 
+//////////////
+**NodeJs must bee installed in system
+> navigate to the folder using cmd/terminal
+> npm init
+> Answer all questions
+> type 'yes'
+
+//////
+Step to install Local dependency
+////////
+> navigate to the folder using cmd/terminal
+> npm i <packages>/npm install <packages> / npm install <packages> --save
+
+
+//////
+Step to install Global dependency
+////////
+//Window
+> run cmd as admin
+> npm i -g nodemon
+
+//mac linux
+> open terminal
+> sudo npm i -g nodemon
+
+
+>>>>>>>>>>
+Generate Node app
+<<<<<<<<
+//One time
+> sudo npm i -g @aakashdeveloper/create-node-app
+Every time
+> navigate to the folder using cmd/terminal
+> generate 
+> select node app
+> project name
+> cd myapp
+> npm start
+> localhost:7600
+
+
+>>>>>>><<<<<<<
+github
+>>>>>>><<<<<<<
+
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/Edu_Jan_Node_Eveng_20.git
+git push -u origin master
+
+
