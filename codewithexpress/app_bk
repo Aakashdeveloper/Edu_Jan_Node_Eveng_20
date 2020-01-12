@@ -1,0 +1,39 @@
+var express = require('express');
+var app = express();
+var fs = require('fs');
+var port = 9800;
+var moviesRouter = express.Router();
+var productRouter = express.Router();
+
+app.get('/', function(req,res) {
+    res.send("This is from express");
+});
+
+app.get('/movies', function(req,res){
+    fs.readFile('db.json','utf-8',function(err,data){
+        if(err) throw err;
+        res.send(data);
+    })
+});
+app.get('/details', function(req,res){
+    res.send('Product Detail Page')
+});
+
+app.get('/details', function(req,res){
+    res.send('Movies Detail Page')
+});
+
+app.get('/products', function(req,res){
+    fs.readFile('prod.json','utf-8',function(err,data){
+        if(err) throw err;
+        res.send(data);
+    })
+});
+
+
+
+
+app.listen(port,function(err){
+    if(err) throw err
+    console.log("Server is running on port 9800")
+});

@@ -1,0 +1,19 @@
+{
+  "name": "codewithexpress",
+  "version": "1.0.0",
+  "description": "this is app with express",
+  "main": "index.js",
+  "scripts": {
+    "start":"node app.js",
+    "dev":"nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "edureka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
