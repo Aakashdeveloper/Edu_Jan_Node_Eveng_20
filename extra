@@ -120,6 +120,11 @@ Pm2
 >pm2 list
 >pm2 stop app.js
 
+>> install install
+>> open nginx.conf
+>> add server configuration
+>> nginx
+
 	server {
 
 		listen 8089;
@@ -162,3 +167,22 @@ Pm2
     #}
 
     sudo nginx -s stop
+
+////
+inbuilt
+fs
+static api
+express
+express routing
+pm2
+nginx
+
+
+//////
+var a = 10
+var b = "my age is "+a 
+my age is 10
+
+var c = `my age is ${a}`
+
+npm i ejs express request

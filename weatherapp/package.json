@@ -1,22 +1,22 @@
 {
-  "name": "codewithexpress",
+  "name": "weatherapp",
   "version": "1.0.0",
-  "description": "this is app with express",
+  "description": "this is weather app",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+   "start":"node server.js",
+   "dev":"nodemon server.js"
   },
   "keywords": [
     "node",
-    "express"
+    "request",
+    "api"
   ],
   "author": "edureka",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^3.0.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "morgan": "^1.9.1"
+    "request": "^2.88.0"
   }
 }
