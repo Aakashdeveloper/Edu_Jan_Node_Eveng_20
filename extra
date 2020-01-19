@@ -186,3 +186,105 @@ my age is 10
 var c = `my age is ${a}`
 
 npm i ejs express request
+////////
+
+SQL
+
+sno |  english | hindi
+ 1  | 80       |
+ 2  |          |80
+
+ -----------
+
+NoSql
+
+[
+    {
+        "sno":1,
+        "english":80
+    },
+    {
+        "sno":2,
+        "hindi":80
+    }
+]
+
+---------
+SQL          NoSql
+Database     Database
+Table        Collections
+Row          Document
+Mysql        mongodb
+
+
+
+---------------
+Install mongodb
+
+Window
+> C:\data\db
+
+
+Mac
+sudo mkdir /System/Volumes/Data/data/db
+
+Window
+C:/data/db
+
+How to run mongodb
+> Open two terminal 
+    1> Mongo server (should alawys running)
+    2> Mongo console ( To test query)
+
+Use cmd and naviagte
+> C:Program/Mongo/3.4/bin
+> mongod  (mongodb server)
+
+>Use cmd and naviagte
+> C:Program/Mongo/4.2/bin
+> mongod (to start server)
+> mongo (to connect with console)
+
+Mac
+> Open Terminal
+> sudo mongod --dbpath /System/Volumes/Data/data/db
+> Open Terminal
+> mongo
+
+Default Port
+(27017)
+
+//////
+ show dbs
+ use classpractice
+ show collections
+ db.myproduct.find()
+ db.myproduct.find().pretty()
+
+//Projection
+db.myproduct.find({},{class:1})
+ db.myproduct.find({},{class:1,_id:0})
+ db.myproduct.find({},{class:0,_id:0})
+ db.myproduct.find({},{id:1,class:1,_id:0})
+ db.myproduct.find({},{id:1,class:1,_id:0}).sort({"rate":1}).limit(3)
+
+//Condition
+db.myproduct.find({"id":4},{class:1,_id:0})
+db.myproduct.find({"id":4,"class":"Mongo"},{class:1,_id:0})
+db.myproduct.find({"id":4,"class":"AI"},{class:1,_id:0})
+{ "class" : "AI" }
+> db.myproduct.find({"id":4"class":"AI"}{},{class:1,_id:0}).count()
+1
+> db.myproduct.count()
+
+db.myproduct.find({$or:[{id:4},{class:"Mongo"}]})
+db.myproduct.find({$and:[{id:4},{class:"Mongo"}]})
+/////////
+db.myproduct.insert({"id":6,class:"Ansible",place:"Nareshit"})
+db.myproduct.insert({"_id":002,"id":7,class:"Jenkis",place:"Nareshit"})
+////////////
+
+db.myproduct.find().sort({"place":-1})
+db.myproduct.find().sort({"place":-1}).limit(3)
+
+ db.mytest.insertMany([{"name":"husk",sno:4},{"name":"ben",sno:5}])
