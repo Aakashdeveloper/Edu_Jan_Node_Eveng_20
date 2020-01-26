@@ -288,3 +288,12 @@ db.myproduct.find().sort({"place":-1})
 db.myproduct.find().sort({"place":-1}).limit(3)
 
  db.mytest.insertMany([{"name":"husk",sno:4},{"name":"ben",sno:5}])
+
+
+
+ CRUD
+ Create Read Update Delete
+
+ Math.floor(Math.random()*(max-min))+min
+
+ npm i @babel/core  @babel/register @babel/preset-env --save-dev
