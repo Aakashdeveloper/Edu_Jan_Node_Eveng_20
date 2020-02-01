@@ -297,3 +297,36 @@ db.myproduct.find().sort({"place":-1}).limit(3)
  Math.floor(Math.random()*(max-min))+min
 
  npm i @babel/core  @babel/register @babel/preset-env --save-dev
+
+//GraphQl
+ npm i axios express express-graphql  graphql lodash
+
+//Get(Query)
+ {
+  product(id:3){
+    name,
+    rating,
+    price
+  }
+}
+
+//Post(Mutation)
+
+mutation{
+  addProduct(
+    id:6,
+    name:"Taco",
+    rating:5
+  ){
+    id
+  }
+}
+
+
+
+ //////Dummy Api/////
+ npm i -g json-server
+ json-server --watch db.json --port 8900
+
+
+docker run --rm   --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  postgres
