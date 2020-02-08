@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var socket = io.connect();
+            
+            socket.on('chat', (data) => {
+                var msg = data.nick+':'+data.message;
+                $('textarea').val($('textarea').value+msg+'\n');
+            });
+            
+            $(function(){
+                $('#nick').on('click', () => {
+                    socket.emit('nick', $('#nickTxt').val())
+                });
+
+                $('#chat').on('click', () => {
+                    socket.emit('chat', {
+                        message:$('#chatText').val()
+                    })
+                })
+            })
+
+        </script>
+        <body>
+            <h1>Chat APP</h1>
+            <p>
+                <input id="nickText" type="text"/>
+                <button id="nick">Set NickName</button>
+            </p>
+            <textarea styel="height:300px;width:300px"></textarea>
+            <p>
+                <input id="chatText" type="text">
+                <button id="chat">Send Message</button>
+            </p>
+        </body>
+    </head>
+</html>

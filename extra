@@ -4,12 +4,8 @@ https://code.visualstudio.com/
 https://github.com/
 https://github.com/Aakashdeveloper
 
-Redis
-Postgres
-Docker
-Nginx
-Aws
-
+ChatApp
+Testing
 -------
 dependency
 node_modules
@@ -337,3 +333,24 @@ npm i bcryptjs body-parser ejs express jsonwebtoken mongoose node-localstorage
 
 
 redis-server
+
+////
+Socket
+///
+.on
+.emit
+
+
+//Micorservices
+//Step to create image
+
+docker build . -t jannode
+
+//Step to check images
+docker image ls 
+
+//Run docker images
+docker run -p 8989:9600 imagename
+
+oauth
+passport
