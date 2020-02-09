@@ -1,46 +1,40 @@
-import express from 'express';
-import path from 'path';
-import http from 'http';
+var express = require('express'), 
+    http = require('http'), 
+    path = require('path')
+    io = require('socket.io');
 
-//const LocalStorage = require('node-localstorage').LocalStorage;
-//let localstorage = new LocalStorage('./scratch');
-//const iplocate = require('node-iplocate');
-//const publicIP = require('public-ip');
-let io = require('socket.io');
-let app = express();
+var app = express();
 
-app.configure(() => {
-        app.set('port', process.env.PORT || 6700);
-        app.use(express.static(path.join(__dirname, 'public')));
-    });
+app.set('port', process.env.PORT || 3000);
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.configure('development', () => {
-    app.use(express.errorHandler());
-})
-
-let server = http.createServer(app).listen(app.get('port'),()=> {
-    console.log('Server is running')
+// Set up express
+var server = http.createServer(app).listen(app.get('port'), function(){
+    console.log("Express server listening on port " + app.get('port'));
 });
 
-io = require('socket.io').listen(server);
+// Set up socket.io
+var io = require('socket.io').listen(server);
 
-io.socket.on('connection', (socker) => {
-    socket.on('nick', (nick) => {
-        socket.set('nickname', nick);
+// Handle socket traffic
+io.sockets.on('connection', function (socket) {
+    socket.on('nick', function(nick) {
+        socket.nickname =nick;
     });
 
-    socket.on('chat', (data) => {
-        socker.get('nickname',(err,nick) => {
-            let  nickname = err ? 'Anonymous': nick;
 
-            let payload = {
+    // Relay chat data to all clients
+    socket.on('chat', function(data) {
+        console.log(data)
+
+            var nickname = socket.nickname;
+
+            var payload = {
                 message: data.message,
-                nick:nickname
+                nick: nickname
             };
 
-            socket.emit('chat', payload);
-            socket.broadcast.emit('chat', payload)
-        })
-    })
-})
+            socket.emit('chat',payload);
+            socket.broadcast.emit('chat', payload);
+    });
+});
