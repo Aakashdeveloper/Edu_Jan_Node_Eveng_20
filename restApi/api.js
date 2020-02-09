@@ -11,6 +11,10 @@ let col_name = "eduJan";
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+    res.send('Nothing')
+})
+
 //Create (Post Call)
 app.post('/addUser',(req,res) => {
     db.collection(col_name).insert(req.body,(err,result) =>{
