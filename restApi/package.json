@@ -17,7 +17,7 @@
     "chai-http": "^4.3.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mocha": "^7.0.1",
+    "mocha": "^10.2.0",
     "mongodb": "^3.5.2"
   },
   "devDependencies": {
